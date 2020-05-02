@@ -1,0 +1,13 @@
+$green: #75c9b1;
+$yellow: #e3e9c7;
+$pink: #75c9b1;
+$white: #fff;
+
+body {
+  margin: 0;
+  background-color: $yellow;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
