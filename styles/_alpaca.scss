@@ -30,18 +30,18 @@ body {
   display: flex;
 }
 
-.alpaca-container {
+.alpaca {
   @include w-h( 50vmin, 80vmin );
-}
 
-.top,
-.btm {
-  @include w-h( 100%, 50% );
-  position: relative;
-}
+  &__top,
+  &__btm {
+    @include w-h( 100%, 50% );
+    position: relative;
+  }
 
-.top {
-  justify-content: space-between;
+  &__top {
+    justify-content: space-between;
+  }
 }
 
 .head {
@@ -94,18 +94,37 @@ body {
 
     .face {
       position: relative;
-      justify-content: center;
-      @include w-h( 100%, 100% );
+      @include w-h( 100%, 35% );
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40%;
 
       &::before {
-        @include pseduo-div( 60%, 35%, lighten( $green, 10 ) );
+        @include pseduo-div( 60%, 100%, lighten( $green, 10 ) );
         border-radius: 50%;
-        margin-top: 40%;
       }
     }
 
-    .eyes {
+    .eyes,
+    .nose {
+      z-index: 10;
+    }
 
+    .eyes {
+      @include w-h( 100%, 45% );
+      justify-content: space-around;
+
+      div {
+        @include w-h( 24%, 100% );
+        background-color: $white;
+        border-radius: 50%;
+      }
+    }
+
+    .nose {
+      @include w-h( 20%, 15% );
+      background-color: $d-green;
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
     }
   }
 
