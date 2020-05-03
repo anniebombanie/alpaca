@@ -42,10 +42,11 @@ body {
   div::before,
   div::after {
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    bottom: 0;
   }
 
   div {
-    background-color: lighten( $pink, 10 );
+    background-color: lighten( $pink, 12 );
     position: relative;
 
     &:first-child {
@@ -54,14 +55,12 @@ body {
       left: 10%;
 
       &::before {
-        @include pseduo-div( 50%, 50%, lighten( $pink, 10 ));
-        bottom: 0;
+        @include pseduo-div( 50%, 50%, lighten( $pink, 15 ));
         left: -20%;
       }
 
       &::after {
-        @include pseduo-div( 30%, 30%, lighten( $pink, 10 ));
-        bottom: 0;
+        @include pseduo-div( 30%, 30%, lighten( $pink, 14 ));
         right: -15%;
       }
     }

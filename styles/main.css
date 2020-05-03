@@ -34,10 +34,11 @@ body {
 .clouds div::before,
 .clouds div::after {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  bottom: 0;
 }
 
 .clouds div {
-  background-color: #efa69c;
+  background-color: #f0aea5;
   position: relative;
 }
 
@@ -53,8 +54,7 @@ body {
   width: 50%;
   height: 50%;
   position: absolute;
-  background-color: #efa69c;
-  bottom: 0;
+  background-color: #f3b9b2;
   left: -20%;
 }
 
@@ -63,8 +63,7 @@ body {
   width: 30%;
   height: 30%;
   position: absolute;
-  background-color: #efa69c;
-  bottom: 0;
+  background-color: #f2b5ae;
   right: -15%;
 }
 
