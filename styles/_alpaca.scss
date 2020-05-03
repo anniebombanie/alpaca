@@ -195,32 +195,33 @@ body {
   .spots::after,
   .spots::before {
     border-radius: 50%;
-    border-bottom: 10vmin solid lighten( $green, 15 );
-    border-right: 7vmin solid transparent;
-    border-left: 7vmin solid transparent;
   }
 
   .spots {
-    // position: absolute;
-    @include w-h( 100%, 100% );
-    // background-color: lighten( $green, 15 );
-    // left: 20%;
+    @include w-h( 0, 0 );
+    position: relative;
+    left: 15%;
+    border-bottom: 6vmin solid lighten( $green, 15 );
+    border-right: 3vmin solid transparent;
+    border-left: 3vmin solid transparent;
 
-    // &::before,
-    // &::after {
-    //   @include pseduo-div( 80%, 80% , lighten( $green, 15 ));
-    //   top: -25%;
-    // }
+    &::before,
+    &::after {
+      @include pseduo-div( 0, 0, transparent );
+      border-bottom: 5vmin solid lighten( $green, 15 );
+      border-right: 2vmin solid transparent;
+      border-left: 2vmin solid transparent;
+    }
 
-    // &::before {
-    //   left: -130%;
-    //   transform: rotate( 35deg );
-    // }
+    &::before {
+      left: -130%;
+      transform: rotate( -55deg ) translate3d( 60%, -10%, 0);
+    }
 
-    // &::after {
-    //   right: -130%;
-    //   transform: rotate( -35deg );
-    // }
+    &::after {
+      right: -130%;
+      transform: rotate( 50deg ) translate3d( -60%, -10%, 0);
+    }
   }
 }
 
