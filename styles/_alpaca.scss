@@ -4,11 +4,17 @@ $yellow: #e3e9c7;
 $pink: #75c9b1;
 $white: #fff;
 
-@mixin pseduo-div( $width, $height ) {
+@mixin pseduo-div( $w, $h, $c ) {
   content: '';
-  width: $width;
-  height: $height;
+  width: $w;
+  height: $h;
   position: absolute;
+  background-color: $c;
+}
+
+@mixin w-h ( $w, $h ) {
+  width: $w;
+  height: $h;
 }
 
 body {
@@ -24,15 +30,13 @@ body {
   display: flex;
 }
 
-.alpaca {
-  height: 80vmin;
-  width: 50vmin;
+.alpaca-container {
+  @include w-h( 50vmin, 80vmin );
 }
 
 .top,
 .btm {
-  width: 100%;
-  height: 50%;
+  @include w-h( 100%, 50% );
   position: relative;
 }
 
@@ -41,154 +45,139 @@ body {
 }
 
 .head {
-  width: calc( 100% / 3 );
-  height: 100%;
+  @include w-h( 40%, 100% );
   position: relative;
   align-items: flex-end;
-}
 
-.ears {
-  height: 28%;
-  width: 100%;
-  justify-content: space-between;
-  position: absolute;
-  top: 0;
-  left: 0;
+  &__ears {
+    @include w-h( 100%, 28% );
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  div {
-    background-color: $green;
-    width: 25%;
-    height: 100%;
-    position: relative;
+    div {
+      background-color: $green;
+      @include w-h( 25%, 100% );
+      width: 25%;
+      position: relative;
 
-    &:first-child {
-      border-radius: 100% 0 0 100% / 50% 0 0 50%;
-
-      &::after {
+      &:first-child {
         border-radius: 100% 0 0 100% / 50% 0 0 50%;
-        right: 10%;
-      }
-    }
 
-    &:last-child {
-      border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+        &::after {
+          border-radius: 100% 0 0 100% / 50% 0 0 50%;
+          right: 10%;
+        }
+      }
+
+      &:last-child {
+        border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+
+        &::after {
+          border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+          left: 10%;
+        }
+      }
 
       &::after {
-        border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-        left: 10%;
+        @include pseduo-div( 62%, 72%, $d-green );
+        overflow: hidden;
+        bottom: 5%;
       }
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      height: 72%;
-      width: 62%;
-      background-color: $d-green;
-      overflow: hidden;
-      position: absolute;
-      bottom: 5%;
     }
   }
-}
 
-.face-neck {
-  height: 75%;
-  width: 100%;
-  background-color: $green;
-  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-  overflow: hidden;
+  &__face-neck {
+    @include w-h( 100%, 75% );
+    background-color: $green;
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+
+    .face {
+      position: relative;
+      justify-content: center;
+      @include w-h( 100%, 100% );
+
+      &::before {
+        @include pseduo-div( 60%, 35%, lighten( $green, 10 ) );
+        border-radius: 50%;
+        margin-top: 40%;
+      }
+    }
+
+    .eyes {
+
+    }
+  }
+
 }
 
 .tail {
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
   background-color: $green;
-  width: 10%;
-  height: 30%;
+  @include w-h( 10%, 30% );
   align-self: flex-end;
 }
 
 .body {
   background-color: $green;
+  @include w-h( 90%, 55% );
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 55%;
   border-radius: 0 0 50% 50% / 0 0 60% 60%;
 }
 
 .legs {
-  width: 90%;
-  height: 100%;
+  @include w-h( 90%, 100% );
   justify-content: space-between;
-}
 
-.front,
-.back {
-  height: 100%;
-  width: 40%;
-  position: relative;
+  &__front,
+  &__back {
+    @include w-h( 43%, 100% );
+    position: relative;
 
-  div {
-    width: 50%;
-    height: 82%;
-
-    &:first-child {
-      background-color: $d-green;
-
-      &::after {
-        background-color: $d-green;
-      }
-    }
-
-    &:last-child {
+    div {
+      @include w-h( 50%, 82% );
       background-color: $green;
 
       &::after {
-        background-color: $green;
+        @include pseduo-div( 18%, 50%, $green );
+        bottom: 0;
       }
-    }
 
-    &::after {
-      @include pseduo-div( 18%, 50% );
-      bottom: 0;
+      &:first-child,
+      &:first-child::after {
+        background-color: $d-green;
+      }
     }
   }
-}
 
-.front {
-  div {
-    border-radius: 0 0 100% 100% / 0 0 25% 25%;
+  &__front {
+    div {
+      border-radius: 0 0 100% 100% / 0 0 25% 25%;
 
-    &:first-child {
-      &::after {
+      &:first-child::after {
         left: 15%;
       }
-    }
 
-    &:last-child {
-      &::after {
+      &:last-child::after {
         left: 65%;
       }
     }
   }
-}
 
-.back {
-  position: relative;
+  &__back {
+    position: relative;
 
-  div {
-    border-radius: 0 0 0 60% / 0 0 0 20%;
+    div {
+      border-radius: 0 0 0 60% / 0 0 0 20%;
 
-    &:first-child {
-      &::after {
+      &:first-child::after {
         right: 50%;
       }
-    }
 
-    &:last-child {
-      &::after {
+      &:last-child::after {
         right: 0;
       }
     }
