@@ -13,8 +13,88 @@ body {
           align-items: center;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .alpaca {
-  background-color: #75c9b1;
   height: 80vmin;
-  width: 80vmin;
+  width: 60vmin;
+}
+
+.top,
+.btm {
+  width: 100%;
+  height: 50%;
+}
+
+.head {
+  width: calc( 100% / 3);
+  height: 100%;
+  position: relative;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.ears {
+  height: 28%;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ears div {
+  background-color: #75c9b1;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ears div:first-child {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+}
+
+.ears div:first-child::after {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  right: 10%;
+}
+
+.ears div:last-child {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+}
+
+.ears div:last-child::after {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 10%;
+}
+
+.ears div::after {
+  content: '';
+  display: block;
+  height: 72%;
+  width: 62%;
+  background-color: #23646f;
+  overflow: hidden;
+  position: absolute;
+  bottom: 5%;
+}
+
+.face-neck {
+  height: 75%;
+  width: 100%;
+  background-color: #75c9b1;
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  overflow: hidden;
+}
+
+.body {
+  background-color: #75c9b1;
 }

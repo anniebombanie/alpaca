@@ -1,4 +1,5 @@
 $green: #75c9b1;
+$d-green: #23646f;
 $yellow: #e3e9c7;
 $pink: #75c9b1;
 $white: #fff;
@@ -12,8 +13,90 @@ body {
   align-items: center;
 }
 
+.flex {
+  display: flex;
+}
+
 .alpaca {
-  background-color: $green;
   height: 80vmin;
-  width: 80vmin;
+  width: 60vmin;
+}
+
+.top,
+.btm {
+  width: 100%;
+  height: 50%;
+}
+
+// .top {
+//   height: 60%;
+// }
+
+// .btm {
+//   height: 40%;
+// }
+
+.head {
+  width: calc( 100% / 3 );
+  height: 100%;
+  position: relative;
+  align-items: flex-end;
+}
+
+.ears {
+  height: 28%;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  div {
+    background-color: $green;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &:first-child {
+      border-radius: 100% 0 0 100% / 50% 0 0 50%;
+
+      &::after {
+        border-radius: 100% 0 0 100% / 50% 0 0 50%;
+        right: 10%;
+      }
+    }
+
+    &:last-child {
+      border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+
+      &::after {
+        border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+        left: 10%;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 72%;
+      width: 62%;
+      background-color: $d-green;
+      overflow: hidden;
+      position: absolute;
+      bottom: 5%;
+    }
+  }
+}
+
+.face-neck {
+  height: 75%;
+  width: 100%;
+  background-color: $green;
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+  overflow: hidden;
+}
+
+.body {
+  background-color: $green;
 }
