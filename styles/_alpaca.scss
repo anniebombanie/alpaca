@@ -166,6 +166,22 @@ body {
   top: 0;
   left: 0;
   border-radius: 0 0 50% 50% / 0 0 60% 60%;
+  justify-content: center;
+
+  .spots {
+    justify-content: space-between;
+    @include w-h( 70%, 50% );
+
+    &__front,
+    &__back {
+      background-color: $pink;
+      position: relative;
+    }
+
+    &__front {
+      @include w-h( 90%, 50% );
+    }
+  }
 }
 
 .legs {
