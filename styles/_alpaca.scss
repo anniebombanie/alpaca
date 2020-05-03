@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .flex {
@@ -72,8 +73,14 @@ body {
         border-radius: 100% 0 0 100% / 50% 0 0 50%;
       }
 
-      &:first-child::after {
-        right: 10%;
+      &:first-child {
+        transform-origin: 100% 100%;
+        transform: rotate( 0 );
+        animation: twitch-ear-left 10s 3s infinite ease-in-out;
+
+        &::after {
+          right: 10%;
+        }
       }
 
       &:last-child,
@@ -81,8 +88,14 @@ body {
         border-radius: 0 100% 100% 0 / 0 50% 50% 0;
       }
 
-      &:last-child::after {
-        left: 10%;
+      &:last-child {
+        transform-origin: 0 100%;
+        transform: rotate( 0deg );
+        animation: twitch-ear-right 10s 3.2s infinite ease-in-out;
+
+        &::after {
+          left: 10%;
+        }
       }
     }
   }
@@ -128,6 +141,7 @@ body {
         &::after {
           @include pseduo-div( 45%, 45%, $d-green );
           border-radius: 50%;
+          animation: blink 5s infinite ease-in-out;
         }
       }
     }
@@ -180,6 +194,9 @@ body {
   background-color: $green;
   @include w-h( 10%, 30% );
   align-self: flex-end;
+  transform-origin: 0% 100%;
+  transform: rotate( 0 );
+  animation: flick-tail 8s 1s infinite ease-in-out;
 }
 
 .body {
@@ -238,22 +255,19 @@ body {
     position: relative;
 
     div {
-      @include w-h( 55%, 85% );
+      @include w-h( 55%, 90% );
       background-color: $green;
       position: absolute;
 
       &::after {
         @include pseduo-div( 35%, 50%, $green );
-        bottom: -18%;
-        position: absolute;
+        bottom: -20%;
       }
 
       &:first-child,
       &:first-child::after {
         background-color: $d-green;
       }
-
-
     }
   }
 
@@ -283,5 +297,105 @@ body {
         right: 0;
       }
     }
+  }
+}
+
+@keyframes blink {
+  0% {
+    height: 45%;
+  }
+
+  2% {
+    height: 0%;
+  }
+
+  4% {
+    height: 45%;
+  }
+
+  6% {
+    height: 0%;
+  }
+
+  8% {
+    height: 45%;
+  }
+
+  100% {
+    height: 45%;
+  }
+}
+
+@keyframes flick-tail {
+  0% {
+    transform: rotate( 0 );
+  }
+
+  2% {
+    transform: rotate( 45deg );
+  }
+
+  6% {
+    transform: rotate( -10deg );
+  }
+
+  9% {
+    transform: rotate( 45deg );
+  }
+
+  12% {
+    transform: rotate( 0 );
+  }
+
+  100% {
+    transform: rotate( 0 );
+  }
+}
+
+@keyframes twitch-ear-left {
+  0% {
+    transform: rotate( 0deg );
+  }
+
+  5% {
+    transform: rotate( -45deg );
+  }
+
+  8% {
+    transform: rotate( 0deg );
+  }
+
+  100% {
+    transform: rotate( 0sdeg );
+  }
+}
+
+@keyframes twitch-ear-right {
+  0% {
+    transform: rotate( 0deg );
+  }
+
+  5% {
+    transform: rotate( 45deg );
+  }
+
+  8% {
+    transform: rotate( 0deg );
+  }
+
+  51% {
+    transform: rotate( 0deg );
+  }
+
+  53% {
+    transform: rotate( 45deg );
+  }
+
+  55% {
+    transform: rotate( 0deg );
+  }
+
+  100% {
+    transform: rotate( 0deg );
   }
 }
