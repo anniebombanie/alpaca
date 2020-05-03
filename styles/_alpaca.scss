@@ -135,7 +135,7 @@ body {
     .cheeks {
       @include w-h( 90%, 25% );
       justify-content: space-between;
-      margin-top: 4%;
+      margin-top: 3%;
 
       div {
         @include w-h( 18%, 100% );
@@ -162,6 +162,7 @@ body {
       @include w-h( 20%, 15% );
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
+      position: relative;
     }
 
     .mouth {

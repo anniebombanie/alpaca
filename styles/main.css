@@ -164,7 +164,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 4%;
+  margin-top: 3%;
 }
 
 .head__face-neck .cheeks div {
@@ -205,6 +205,7 @@ body {
   height: 15%;
   background-color: #23646f;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  position: relative;
 }
 
 .head__face-neck .mouth {
