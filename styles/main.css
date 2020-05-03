@@ -241,36 +241,15 @@ body {
 .body .spots,
 .body .spots::after,
 .body .spots::before {
-  border-radius: 50% / 60% 60% 40% 40%;
+  border-radius: 50%;
+  border-bottom: 10vmin solid #acdfd0;
+  border-right: 7vmin solid transparent;
+  border-left: 7vmin solid transparent;
 }
 
 .body .spots {
-  position: absolute;
-  width: 7%;
-  height: 25%;
-  background-color: #acdfd0;
-  left: 20%;
-}
-
-.body .spots::before, .body .spots::after {
-  content: '';
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  background-color: #acdfd0;
-  top: -25%;
-}
-
-.body .spots::before {
-  left: -130%;
-  -webkit-transform: rotate(35deg);
-          transform: rotate(35deg);
-}
-
-.body .spots::after {
-  right: -130%;
-  -webkit-transform: rotate(-35deg);
-          transform: rotate(-35deg);
+  width: 100%;
+  height: 100%;
 }
 
 .legs {
