@@ -121,7 +121,8 @@ body {
 
 .head__face-neck .eyes,
 .head__face-neck .nose,
-.head__face-neck .cheeks {
+.head__face-neck .cheeks,
+.head__face-neck .mouth {
   z-index: 10;
 }
 
@@ -173,11 +174,18 @@ body {
 }
 
 .head__face-neck .cheeks div {
-  width: 22%;
+  width: 18%;
   height: 100%;
   background-color: #e87e70;
   border-radius: 50%;
   margin-top: -5%;
+}
+
+.head__face-neck .mouth {
+  width: 40%;
+  height: 15%;
+  background-color: #23646f;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
 
 .tail {

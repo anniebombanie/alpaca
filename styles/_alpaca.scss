@@ -107,7 +107,8 @@ body {
 
     .eyes,
     .nose,
-    .cheeks {
+    .cheeks,
+    .mouth {
       z-index: 10;
     }
 
@@ -142,11 +143,17 @@ body {
       justify-content: space-between;
 
       div {
-        @include w-h( 22%, 100% );
+        @include w-h( 18%, 100% );
         background-color: $pink;
         border-radius: 50%;
         margin-top: -5%;
       }
+    }
+
+    .mouth {
+      @include w-h( 40%, 15% );
+      background-color: $d-green;
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
     }
   }
 
