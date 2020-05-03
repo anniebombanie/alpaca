@@ -21,13 +21,14 @@ body {
 
 .alpaca {
   height: 80vmin;
-  width: 60vmin;
+  width: 62vmin;
 }
 
 .top,
 .btm {
   width: 100%;
   height: 50%;
+  position: relative;
 }
 
 .head {
@@ -97,4 +98,46 @@ body {
 
 .body {
   background-color: #75c9b1;
+  position: absolute;
+  width: 85%;
+  height: 60%;
+  border-radius: 0 0 0 30% / 0 0 0 60%;
+}
+
+.legs {
+  width: 85%;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 35%;
+}
+
+.front div,
+.back div {
+  width: 50%;
+  height: 80%;
+}
+
+.front div:first-child,
+.back div:first-child {
+  background-color: #23646f;
+}
+
+.front div:last-child,
+.back div:last-child {
+  background-color: #75c9b1;
+}
+
+.front div {
+  border-radius: 0 0 100% 100% / 0 0 30% 30%;
+}
+
+.back div {
+  border-radius: 0 0 0 80% / 0 0 0 25%;
 }
