@@ -236,17 +236,20 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .body .spots {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 60%;
-  height: 50%;
+  height: 24%;
 }
 
 .body .spots__front, .body .spots__back {
@@ -260,7 +263,7 @@ body {
 
 .body .spots__front {
   width: 11%;
-  height: 50%;
+  height: 100%;
   position: relative;
 }
 
@@ -283,6 +286,38 @@ body {
   right: -130%;
   -webkit-transform: rotate(-35deg);
           transform: rotate(-35deg);
+}
+
+.body .spots__back, .body .spots__back::before, .body .spots__back::after {
+  border-radius: 50%;
+}
+
+.body .spots__back {
+  width: 20%;
+  height: 100%;
+  margin-top: -10%;
+  margin-right: -15%;
+  position: relative;
+}
+
+.body .spots__back::before {
+  content: '';
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-color: #acdfd0;
+  top: -65%;
+  right: 85%;
+}
+
+.body .spots__back::after {
+  content: '';
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  background-color: #acdfd0;
+  top: -65%;
+  right: 0;
 }
 
 .legs {
