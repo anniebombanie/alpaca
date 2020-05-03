@@ -62,28 +62,27 @@ body {
       width: 25%;
       position: relative;
 
-      &:first-child {
-        border-radius: 100% 0 0 100% / 50% 0 0 50%;
-
-        &::after {
-          border-radius: 100% 0 0 100% / 50% 0 0 50%;
-          right: 10%;
-        }
-      }
-
-      &:last-child {
-        border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-
-        &::after {
-          border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-          left: 10%;
-        }
-      }
-
       &::after {
         @include pseduo-div( 62%, 72%, $d-green );
-        overflow: hidden;
         bottom: 5%;
+      }
+
+      &:first-child,
+      &:first-child::after {
+        border-radius: 100% 0 0 100% / 50% 0 0 50%;
+      }
+
+      &:first-child::after {
+        right: 10%;
+      }
+
+      &:last-child,
+      &:last-child::after {
+        border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+      }
+
+      &:last-child::after {
+        left: 10%;
       }
     }
   }
@@ -157,12 +156,17 @@ body {
     div {
       border-radius: 0 0 100% 100% / 0 0 25% 25%;
 
+      &:first-child::after,
+      &:last-child::after {
+        transform: translate3d( -50%, 0, 0 );
+      }
+
       &:first-child::after {
-        left: 15%;
+        left: 25%;
       }
 
       &:last-child::after {
-        left: 65%;
+        left: 75%;
       }
     }
   }

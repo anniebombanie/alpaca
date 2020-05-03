@@ -65,32 +65,29 @@ body {
   position: relative;
 }
 
-.head__ears div:first-child {
-  border-radius: 100% 0 0 100% / 50% 0 0 50%;
-}
-
-.head__ears div:first-child::after {
-  border-radius: 100% 0 0 100% / 50% 0 0 50%;
-  right: 10%;
-}
-
-.head__ears div:last-child {
-  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-}
-
-.head__ears div:last-child::after {
-  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-  left: 10%;
-}
-
 .head__ears div::after {
   content: '';
   width: 62%;
   height: 72%;
   position: absolute;
   background-color: #23646f;
-  overflow: hidden;
   bottom: 5%;
+}
+
+.head__ears div:first-child, .head__ears div:first-child::after {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+}
+
+.head__ears div:first-child::after {
+  right: 10%;
+}
+
+.head__ears div:last-child, .head__ears div:last-child::after {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+}
+
+.head__ears div:last-child::after {
+  left: 10%;
 }
 
 .head__face-neck {
@@ -175,12 +172,17 @@ body {
   border-radius: 0 0 100% 100% / 0 0 25% 25%;
 }
 
+.legs__front div:first-child::after, .legs__front div:last-child::after {
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+}
+
 .legs__front div:first-child::after {
-  left: 15%;
+  left: 25%;
 }
 
 .legs__front div:last-child::after {
-  left: 65%;
+  left: 75%;
 }
 
 .legs__back {
