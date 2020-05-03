@@ -1,7 +1,7 @@
 $green: #75c9b1;
 $d-green: #23646f;
 $yellow: #e3e9c7;
-$pink: #75c9b1;
+$pink: #e87e70;
 $white: #fff;
 
 @mixin pseduo-div( $w, $h, $c ) {
@@ -106,18 +106,28 @@ body {
     }
 
     .eyes,
-    .nose {
+    .nose,
+    .cheeks {
       z-index: 10;
     }
 
     .eyes {
-      @include w-h( 100%, 45% );
-      justify-content: space-around;
+      @include w-h( 76%, 45% );
+      justify-content: space-between;
+      margin-top: -5%;
 
       div {
-        @include w-h( 24%, 100% );
+        @include w-h( 31%, 100% );
         background-color: $white;
         border-radius: 50%;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+
+        &::after {
+          @include pseduo-div( 50%, 50%, $d-green );
+          border-radius: 50%;
+        }
       }
     }
 
@@ -125,6 +135,18 @@ body {
       @include w-h( 20%, 15% );
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    }
+
+    .cheeks {
+      @include w-h( 90%, 25% );
+      justify-content: space-between;
+
+      div {
+        @include w-h( 22%, 100% );
+        background-color: $pink;
+        border-radius: 50%;
+        margin-top: -5%;
+      }
     }
   }
 

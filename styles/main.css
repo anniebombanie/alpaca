@@ -120,21 +120,40 @@ body {
 }
 
 .head__face-neck .eyes,
-.head__face-neck .nose {
+.head__face-neck .nose,
+.head__face-neck .cheeks {
   z-index: 10;
 }
 
 .head__face-neck .eyes {
-  width: 100%;
+  width: 76%;
   height: 45%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -5%;
 }
 
 .head__face-neck .eyes div {
-  width: 24%;
+  width: 31%;
   height: 100%;
   background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.head__face-neck .eyes div::after {
+  content: '';
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-color: #23646f;
   border-radius: 50%;
 }
 
@@ -143,6 +162,22 @@ body {
   height: 15%;
   background-color: #23646f;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.head__face-neck .cheeks {
+  width: 90%;
+  height: 25%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.head__face-neck .cheeks div {
+  width: 22%;
+  height: 100%;
+  background-color: #e87e70;
+  border-radius: 50%;
+  margin-top: -5%;
 }
 
 .tail {
