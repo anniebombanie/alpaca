@@ -184,9 +184,9 @@ body {
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
       margin-top: 5%;
+      animation: smile 4s 0.5s infinite ease-in-out;
     }
   }
-
 }
 
 .tail {
@@ -397,5 +397,43 @@ body {
 
   100% {
     transform: rotate( 0deg );
+  }
+}
+
+@keyframes smile {
+  0% {
+    height: 25%;
+  }
+
+  65% {
+    height: 25%;
+  }
+
+  70% {
+    height: 40%;
+  }
+
+  72% {
+    height: 40%;
+  }
+
+  80% {
+    height: 5%;
+  }
+
+  85% {
+    height: 20%;
+  }
+
+  90% {
+    height: 5%;
+  }
+
+  95% {
+    height: 25%;
+  }
+
+  100% {
+    height: 25%;
   }
 }
