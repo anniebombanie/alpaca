@@ -4,6 +4,13 @@ $yellow: #e3e9c7;
 $pink: #75c9b1;
 $white: #fff;
 
+@mixin pseduo-div( $width, $height ) {
+  content: '';
+  width: $width;
+  height: $height;
+  position: absolute;
+}
+
 body {
   margin: 0;
   background-color: $yellow;
@@ -19,7 +26,7 @@ body {
 
 .alpaca {
   height: 80vmin;
-  width: 62vmin;
+  width: 50vmin;
 }
 
 .top,
@@ -29,9 +36,9 @@ body {
   position: relative;
 }
 
-// .top {
-//   height: 60%;
-// }
+.top {
+  justify-content: space-between;
+}
 
 .head {
   width: calc( 100% / 3 );
@@ -52,7 +59,6 @@ body {
     background-color: $green;
     width: 25%;
     height: 100%;
-    overflow: hidden;
     position: relative;
 
     &:first-child {
@@ -94,16 +100,26 @@ body {
   overflow: hidden;
 }
 
+.tail {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  background-color: $green;
+  width: 10%;
+  height: 30%;
+  align-self: flex-end;
+}
+
 .body {
   background-color: $green;
   position: absolute;
-  width: 85%;
-  height: 60%;
-  border-radius: 0 0 0 30% / 0 0 0 60%;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 55%;
+  border-radius: 0 0 50% 50% / 0 0 60% 60%;
 }
 
 .legs {
-  width: 85%;
+  width: 90%;
   height: 100%;
   justify-content: space-between;
 }
@@ -111,30 +127,70 @@ body {
 .front,
 .back {
   height: 100%;
-  width: 35%;
+  width: 40%;
+  position: relative;
 
   div {
     width: 50%;
-    height: 80%;
+    height: 82%;
 
     &:first-child {
       background-color: $d-green;
+
+      &::after {
+        background-color: $d-green;
+      }
     }
 
     &:last-child {
       background-color: $green;
+
+      &::after {
+        background-color: $green;
+      }
+    }
+
+    &::after {
+      @include pseduo-div( 18%, 50% );
+      bottom: 0;
     }
   }
 }
 
 .front {
   div {
-    border-radius: 0 0 100% 100% / 0 0 30% 30%;
+    border-radius: 0 0 100% 100% / 0 0 25% 25%;
+
+    &:first-child {
+      &::after {
+        left: 15%;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        left: 65%;
+      }
+    }
   }
 }
 
 .back {
+  position: relative;
+
   div {
-    border-radius: 0 0 0 80% / 0 0 0 25%;
+    border-radius: 0 0 0 60% / 0 0 0 20%;
+
+    &:first-child {
+      &::after {
+        right: 50%;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        right: 0;
+      }
+    }
   }
 }
