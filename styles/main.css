@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #e3e9c7;
+  background: #e3e9c7;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,6 +18,54 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.clouds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+}
+
+.clouds div,
+.clouds div::before,
+.clouds div::after {
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.clouds div {
+  background-color: #efa69c;
+  position: relative;
+}
+
+.clouds div:first-child {
+  width: 20vmin;
+  height: 10vmin;
+  top: 5%;
+  left: 10%;
+}
+
+.clouds div:first-child::before {
+  content: '';
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-color: #efa69c;
+  bottom: 0;
+  left: -20%;
+}
+
+.clouds div:first-child::after {
+  content: '';
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  background-color: #efa69c;
+  bottom: 0;
+  right: -15%;
 }
 
 .alpaca {
