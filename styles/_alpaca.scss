@@ -189,70 +189,34 @@ body {
   top: 0;
   left: 0;
   border-radius: 0 0 50% 50% / 0 0 60% 60%;
-  justify-content: center;
   align-items: center;
 
+  .spots,
+  .spots::after,
+  .spots::before {
+    border-radius: 50% / 60% 60% 40% 40%;
+  }
+
   .spots {
-    justify-content: space-between;
-    align-items: center;
-    @include w-h( 60%, 24% );
+    position: absolute;
+    @include w-h( 7%, 25% );
+    background-color: lighten( $green, 15 );
+    left: 20%;
 
-    &__front,
-    &__back {
-      background-color: lighten( $green, 15 );
-      position: relative;
+    &::before,
+    &::after {
+      @include pseduo-div( 80%, 80% , lighten( $green, 15 ));
+      top: -25%;
     }
 
-    &__front,
-    &__front::before,
-    &__front::after {
-      border-radius: 50% / 60% 60% 40% 40%;
+    &::before {
+      left: -130%;
+      transform: rotate( 35deg );
     }
 
-    &__front {
-      @include w-h( 11%, 100% );
-      position: relative;
-
-      &::before,
-      &::after {
-        @include pseduo-div( 80%, 80% , lighten( $green, 15 ));
-        top: -25%;
-      }
-
-      &::before {
-        left: -130%;
-        transform: rotate( 35deg );
-      }
-
-      &::after {
-        right: -130%;
-        transform: rotate( -35deg );
-      }
-    }
-
-    &__back,
-    &__back::before,
-    &__back::after {
-      border-radius: 50%;
-    }
-
-    &__back {
-      @include w-h( 20%, 100% );
-      margin-top: -10%;
-      margin-right: -15%;
-      position: relative;
-
-      &::before {
-        @include pseduo-div( 50%, 50% , lighten( $green, 15 ));
-        top: -65%;
-        right: 85%;
-      }
-
-      &::after {
-        @include pseduo-div( 30%, 30% , lighten( $green, 15 ));
-        top: -65%;
-        right: 0;
-      }
+    &::after {
+      right: -130%;
+      transform: rotate( -35deg );
     }
   }
 }
