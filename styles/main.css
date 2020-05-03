@@ -188,7 +188,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  bottom: -5%;
+  bottom: -4%;
 }
 
 .head__face-neck .snout::before {
@@ -205,12 +205,12 @@ body {
   height: 15%;
   background-color: #23646f;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  position: relative;
+  margin-top: 5%;
 }
 
 .head__face-neck .mouth {
   width: 50%;
-  height: 30%;
+  height: 25%;
   background-color: #23646f;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   margin-top: 5%;
@@ -236,6 +236,53 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.body .spots {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 60%;
+  height: 50%;
+}
+
+.body .spots__front, .body .spots__back {
+  background-color: #acdfd0;
+  position: relative;
+}
+
+.body .spots__front, .body .spots__front::before, .body .spots__front::after {
+  border-radius: 50% / 60% 60% 40% 40%;
+}
+
+.body .spots__front {
+  width: 11%;
+  height: 50%;
+  position: relative;
+}
+
+.body .spots__front::before, .body .spots__front::after {
+  content: '';
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  background-color: #acdfd0;
+  top: -25%;
+}
+
+.body .spots__front::before {
+  left: -130%;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+.body .spots__front::after {
+  right: -130%;
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
 }
 
 .legs {

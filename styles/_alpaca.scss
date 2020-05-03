@@ -150,7 +150,7 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      bottom: -5%;
+      bottom: -4%;
 
       &::before {
         @include pseduo-div( 70%, 100%, lighten( $green, 18 ) );
@@ -162,11 +162,11 @@ body {
       @include w-h( 20%, 15% );
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
-      position: relative;
+      margin-top: 5%;
     }
 
     .mouth {
-      @include w-h( 50%, 30% );
+      @include w-h( 50%, 25% );
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
       margin-top: 5%;
@@ -191,20 +191,44 @@ body {
   border-radius: 0 0 50% 50% / 0 0 60% 60%;
   justify-content: center;
 
-  // .spots {
-  //   justify-content: space-between;
-  //   @include w-h( 70%, 50% );
+  .spots {
+    justify-content: space-between;
+    align-items: flex-end;
+    @include w-h( 60%, 50% );
 
-  //   &__front,
-  //   &__back {
-  //     background-color: $pink;
-  //     position: relative;
-  //   }
+    &__front,
+    &__back {
+      background-color: lighten( $green, 15 );
+      position: relative;
+    }
 
-  //   &__front {
-  //     @include w-h( 90%, 50% );
-  //   }
-  // }
+    &__front,
+    &__front::before,
+    &__front::after {
+      border-radius: 50% / 60% 60% 40% 40%;
+    }
+
+    &__front {
+      @include w-h( 11%, 50% );
+      position: relative;
+
+      &::before,
+      &::after {
+        @include pseduo-div( 80%, 80% , lighten( $green, 15 ));
+        top: -25%;
+      }
+
+      &::before {
+        left: -130%;
+        transform: rotate( 35deg );
+      }
+
+      &::after {
+        right: -130%;
+        transform: rotate( -35deg );
+      }
+    }
+  }
 }
 
 .legs {
