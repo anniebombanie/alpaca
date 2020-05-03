@@ -106,8 +106,8 @@ body {
     }
 
     .eyes,
-    .nose,
     .cheeks,
+    .nose,
     .mouth {
       z-index: 10;
     }
@@ -115,7 +115,7 @@ body {
     .eyes {
       @include w-h( 76%, 45% );
       justify-content: space-between;
-      margin-top: -8%;
+      margin-top: -5%;
 
       div {
         @include w-h( 35%, 100% );
@@ -132,28 +132,43 @@ body {
       }
     }
 
+    .cheeks {
+      @include w-h( 90%, 25% );
+      justify-content: space-between;
+      margin-top: 4%;
+
+      div {
+        @include w-h( 18%, 100% );
+        background-color: $pink;
+        border-radius: 50%;
+      }
+    }
+
+    .snout {
+      position: absolute;
+      @include w-h( 77%, 70% );
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      bottom: -5%;
+
+      &::before {
+        @include pseduo-div( 70%, 100%, lighten( $green, 18 ) );
+        border-radius: 50%;
+      }
+    }
+
     .nose {
       @include w-h( 20%, 15% );
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
     }
 
-    .cheeks {
-      @include w-h( 90%, 25% );
-      justify-content: space-between;
-
-      div {
-        @include w-h( 18%, 100% );
-        background-color: $pink;
-        border-radius: 50%;
-        margin-top: -5%;
-      }
-    }
-
     .mouth {
-      @include w-h( 40%, 15% );
+      @include w-h( 50%, 30% );
       background-color: $d-green;
       border-radius: 0 0 50% 50% / 0 0 100% 100%;
+      margin-top: 5%;
     }
   }
 
@@ -175,20 +190,20 @@ body {
   border-radius: 0 0 50% 50% / 0 0 60% 60%;
   justify-content: center;
 
-  .spots {
-    justify-content: space-between;
-    @include w-h( 70%, 50% );
+  // .spots {
+  //   justify-content: space-between;
+  //   @include w-h( 70%, 50% );
 
-    &__front,
-    &__back {
-      background-color: $pink;
-      position: relative;
-    }
+  //   &__front,
+  //   &__back {
+  //     background-color: $pink;
+  //     position: relative;
+  //   }
 
-    &__front {
-      @include w-h( 90%, 50% );
-    }
-  }
+  //   &__front {
+  //     @include w-h( 90%, 50% );
+  //   }
+  // }
 }
 
 .legs {
