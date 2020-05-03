@@ -190,6 +190,7 @@ body {
   left: 0;
   border-radius: 0 0 50% 50% / 0 0 60% 60%;
   align-items: center;
+  justify-content: flex-end;
 
   .spots,
   .spots::after,
@@ -200,27 +201,29 @@ body {
   .spots {
     @include w-h( 0, 0 );
     position: relative;
-    left: 16%;
-    border-bottom: 6.5vmin solid lighten( $green, 15 );
+    right: 16%;
+    bottom: 12%;
+    border-top: 6.5vmin solid lighten( $green, 15 );
     border-right: 2.5vmin solid transparent;
     border-left: 2.5vmin solid transparent;
 
     &::before,
     &::after {
       @include pseduo-div( 0, 0, transparent );
-      border-bottom: 5vmin solid lighten( $green, 15 );
+      border-top: 5vmin solid lighten( $green, 15 );
       border-right: 2vmin solid transparent;
       border-left: 2vmin solid transparent;
+      transform-origin: 50% 0;
     }
 
     &::before {
       left: -130%;
-      transform: rotate( -55deg ) translate3d( 60%, -10%, 0);
+      transform: rotate( 55deg ) translate3d( 0, -90%, 0);
     }
 
     &::after {
       right: -130%;
-      transform: rotate( 50deg ) translate3d( -60%, -10%, 0);
+      transform: rotate( -55deg ) translate3d( 0, -90%, 0);
     }
   }
 }
