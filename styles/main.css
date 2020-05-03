@@ -248,10 +248,10 @@ body {
   width: 0;
   height: 0;
   position: relative;
-  left: 15%;
-  border-bottom: 6vmin solid #acdfd0;
-  border-right: 3vmin solid transparent;
-  border-left: 3vmin solid transparent;
+  left: 16%;
+  border-bottom: 6.5vmin solid #acdfd0;
+  border-right: 2.5vmin solid transparent;
+  border-left: 2.5vmin solid transparent;
 }
 
 .body .spots::before, .body .spots::after {
@@ -293,7 +293,7 @@ body {
 
 .legs__front div, .legs__back div {
   width: 50%;
-  height: 82%;
+  height: 85%;
   background-color: #75c9b1;
 }
 

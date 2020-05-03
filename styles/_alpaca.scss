@@ -200,10 +200,10 @@ body {
   .spots {
     @include w-h( 0, 0 );
     position: relative;
-    left: 15%;
-    border-bottom: 6vmin solid lighten( $green, 15 );
-    border-right: 3vmin solid transparent;
-    border-left: 3vmin solid transparent;
+    left: 16%;
+    border-bottom: 6.5vmin solid lighten( $green, 15 );
+    border-right: 2.5vmin solid transparent;
+    border-left: 2.5vmin solid transparent;
 
     &::before,
     &::after {
@@ -235,7 +235,7 @@ body {
     position: relative;
 
     div {
-      @include w-h( 50%, 82% );
+      @include w-h( 50%, 85% );
       background-color: $green;
 
       &::after {
