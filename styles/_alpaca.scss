@@ -47,22 +47,21 @@ body {
   }
 
   div {
-    background-color: lighten( $pink, 15 );
+    background-color: lighten( $pink, 12 );
     position: absolute;
 
     &:first-child {
       @include w-h( 20vmin, 10vmin );
       top: 5%;
       left: 10%;
-      opacity: 80%;
 
       &::before {
-        @include pseduo-div( 50%, 50%, lighten( $pink, 17 ));
+        @include pseduo-div( 50%, 50%, lighten( $pink, 16 ));
         left: -20%;
       }
 
       &::after {
-        @include pseduo-div( 30%, 30%, lighten( $pink, 13 ));
+        @include pseduo-div( 30%, 30%, lighten( $pink, 14 ));
         right: -15%;
       }
     }
@@ -73,12 +72,12 @@ body {
       right: 15%;
 
       &::before {
-        @include pseduo-div( 40%, 40%, lighten( $pink, 19 ));
+        @include pseduo-div( 40%, 40%, lighten( $pink, 17 ));
         left: -15%;
       }
 
       &::after {
-        @include pseduo-div( 70%, 70%, lighten( $pink, 17 ));
+        @include pseduo-div( 70%, 70%, lighten( $pink, 15 ));
         right: -25%;
       }
     }

@@ -39,7 +39,7 @@ body {
 }
 
 .clouds div {
-  background-color: #f3b9b2;
+  background-color: #f0aea5;
   position: absolute;
 }
 
@@ -48,7 +48,6 @@ body {
   height: 10vmin;
   top: 5%;
   left: 10%;
-  opacity: 80%;
 }
 
 .clouds div:first-child::before {
@@ -56,7 +55,7 @@ body {
   width: 50%;
   height: 50%;
   position: absolute;
-  background-color: #f4c1bb;
+  background-color: #f3bdb6;
   left: -20%;
 }
 
@@ -65,7 +64,7 @@ body {
   width: 30%;
   height: 30%;
   position: absolute;
-  background-color: #f1b2a9;
+  background-color: #f2b5ae;
   right: -15%;
 }
 
@@ -81,7 +80,7 @@ body {
   width: 40%;
   height: 40%;
   position: absolute;
-  background-color: #f5c9c3;
+  background-color: #f4c1bb;
   left: -15%;
 }
 
@@ -90,7 +89,7 @@ body {
   width: 70%;
   height: 70%;
   position: absolute;
-  background-color: #f4c1bb;
+  background-color: #f3b9b2;
   right: -25%;
 }
 
