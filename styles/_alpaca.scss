@@ -144,7 +144,7 @@ body {
       &:last-child {
         transform-origin: 0 100%;
         transform: rotate( 0deg );
-        animation: twitch-ear-right 10s 3.2s infinite ease-in-out;
+        animation: twitch-ear-right 10s 3.1s infinite ease-in-out;
 
         &::after {
           left: 10%;
@@ -249,7 +249,7 @@ body {
   align-self: flex-end;
   transform-origin: 0% 100%;
   transform: rotate( 0 );
-  animation: flick-tail 8s 1s infinite ease-in-out;
+  animation: flick-tail 8s 1.5s infinite ease-in-out;
 }
 
 .body {
